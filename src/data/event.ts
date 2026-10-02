@@ -6,7 +6,7 @@ export const event = {
   stats: [
     { value: 3, suffix: "", label: "immersive tracks" },
     { value: 20, suffix: "+", label: "planned challenges" },
-    { value: 1, suffix: "", label: "coding arena" },
+    { value: 1, suffix: "", label: "DSA challenge" },
     { value: 0, suffix: "", label: "experience required" },
   ],
   tracks: [
@@ -38,13 +38,13 @@ export const event = {
       id: "dsa",
       number: "03",
       title: "Think. Solve. Win.",
-      category: "DSA ARENA",
+      category: "DSA CHALLENGE",
       description:
         "Put your problem-solving instincts to the test. Race the clock, find the pattern, and climb the ranks.",
       tags: ["Algorithms", "Problem solving", "Competition"],
       command: "while (true) { levelUp(); }",
       detail:
-        "Practice arrays, strings, trees, and graphs before a timed coding challenge. Start with our three interactive warm-up problems below.",
+        "Explore arrays, strings, trees, and graphs in the event’s DSA challenge. This site introduces the experience; participation details will be shared by the organizers.",
     },
   ],
   schedule: [
@@ -74,8 +74,8 @@ export const event = {
     },
     {
       time: "14:00",
-      command: "npm run arena",
-      title: "Enter the DSA arena",
+      command: "npm run challenge",
+      title: "The DSA challenge",
       description: "The clock starts. Your problem-solving takes over.",
     },
     {
@@ -88,7 +88,7 @@ export const event = {
   faqs: [
     {
       q: "Do I need to know Git or DSA already?",
-      a: "No. The workshops start with the fundamentals. Basic familiarity with any programming language is helpful for the arena, and the warm-up problems are open to everyone.",
+      a: "No. The workshops start with the fundamentals. Basic familiarity with any programming language is helpful for the DSA challenge.",
     },
     {
       q: "What should I bring?",
@@ -104,50 +104,7 @@ export const event = {
     },
     {
       q: "How do I register?",
-      a: "Official registration is not open yet. The interest form lets you save your preference on this device as a preview; it does not send your information to the organizers or reserve a place.",
+      a: "Registration details will be shared by the organizers once confirmed. Check back here for event updates.",
     },
   ],
 };
-
-export const problems = [
-  {
-    id: "two-sum",
-    title: "Two Sum",
-    difficulty: "Easy",
-    topic: "Arrays",
-    description:
-      "Given nums = [2, 7, 11, 15] and target = 9, return the zero-based indices of the two numbers that add up to the target.",
-    hint: "For each number, look for target − number. A hash map can make this O(n).",
-    placeholder: "e.g. 0, 1",
-    answer: "0,1",
-    explanation:
-      "nums[0] + nums[1] = 2 + 7 = 9. A hash map solves the general problem in O(n) time.",
-  },
-  {
-    id: "brackets",
-    title: "Valid Parentheses",
-    difficulty: "Easy",
-    topic: "Stacks",
-    description:
-      'Is the sequence "{[()]}" valid? Each opening bracket must have a matching closing bracket in the correct order. Enter true or false.',
-    hint: "Push opening brackets onto a stack; each closing bracket must match the top.",
-    placeholder: "true or false",
-    answer: "true",
-    explanation:
-      "All brackets close in reverse order of opening. A stack validates the sequence in O(n) time.",
-  },
-  {
-    id: "subarray",
-    title: "Maximum Subarray",
-    difficulty: "Medium",
-    topic: "Dynamic programming",
-    description:
-      "Find the largest sum of a contiguous subarray in [-2, 1, -3, 4, -1, 2, 1, -5, 4]. Enter the sum.",
-    hint: "At each position, choose between extending the previous subarray and starting fresh.",
-    placeholder: "Enter the maximum sum",
-    answer: "6",
-    explanation:
-      "The subarray [4, -1, 2, 1] sums to 6. Kadane’s algorithm finds it in O(n) time.",
-  },
-];
-export type Problem = (typeof problems)[number];
