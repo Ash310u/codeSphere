@@ -86,12 +86,12 @@ export function Sphere() {
       <svg className="sphere-mesh" viewBox="0 0 600 600" aria-hidden="true">
         <defs>
           <radialGradient id="sphereGlow">
-            <stop stopColor="#7561cf" stopOpacity=".18" />
-            <stop offset="1" stopColor="#7561cf" stopOpacity="0" />
+            <stop stopColor="var(--accent)" stopOpacity=".09" />
+            <stop offset="1" stopColor="var(--accent)" stopOpacity="0" />
           </radialGradient>
           <linearGradient id="meshColor" x1="0" y1="0" x2="1" y2="1">
-            <stop stopColor="#c1adff" />
-            <stop offset="1" stopColor="#59517f" />
+            <stop stopColor="var(--sphere-mesh-start)" />
+            <stop offset="1" stopColor="var(--sphere-mesh-end)" />
           </linearGradient>
         </defs>
         <circle cx="300" cy="300" r="235" fill="url(#sphereGlow)" />
@@ -110,7 +110,7 @@ export function Sphere() {
                 cx={p.x}
                 cy={p.y}
                 r={p.depth > 0.4 ? 1.5 : 0.8}
-                fill="#c8bcff"
+                fill="var(--sphere-node)"
               />
             </g>
           );
@@ -121,12 +121,12 @@ export function Sphere() {
           rx="265"
           ry="80"
           transform="rotate(-27 300 300)"
-          stroke="#aa92fa"
+          stroke="var(--accent)"
           strokeWidth="1"
           fill="none"
           opacity=".55"
         />
-        <circle className="orbit-dot" cx="530" cy="182" r="5" fill="#d0bfff" />
+        <circle className="orbit-dot" cx="530" cy="182" r="5" fill="var(--accent)" />
       </svg>
       <button
         className="sphere-tag tag-main"
