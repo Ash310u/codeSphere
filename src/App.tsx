@@ -19,101 +19,6 @@ import { event } from "./data/event";
 import { Count, Reveal, Sphere } from "./components/Effects";
 import Dialog from "./components/Dialog";
 import GitWorkflow from "./components/GitWorkflow";
-import Arena from "./components/Arena";
-
-function InterestForm({ onClose }: { onClose: () => void }) {
-  const [saved, setSaved] = useState(false);
-  const [error, setError] = useState("");
-  return (
-    <Dialog
-      title={saved ? "Your next chapter awaits." : "Get on the starting line."}
-      onClose={onClose}
-    >
-      {saved ? (
-        <>
-          <div className="saved-icon">
-            <Check size={30} />
-          </div>
-          <p>
-            Your interest has been saved on this device. This is a local
-            preview, not an official registration or an email subscription.
-          </p>
-          <p className="muted">
-            Check back for the confirmed event date and registration link.
-          </p>
-          <button className="button button-primary" onClick={onClose}>
-            Back to exploring <ArrowRight size={16} />
-          </button>
-        </>
-      ) : (
-        <>
-          <p>
-            Official registration is coming soon. Save your interest while you
-            explore.
-          </p>
-          <div className="notice">
-            Preview only: your details stay in this browser. Nothing is sent to
-            the organizers and no place is reserved.
-          </div>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              const data = new FormData(e.currentTarget);
-              try {
-                localStorage.setItem(
-                  "codesphere-interest",
-                  JSON.stringify({
-                    name: data.get("name"),
-                    email: data.get("email"),
-                    track: data.get("track"),
-                  }),
-                );
-                setSaved(true);
-              } catch {
-                setError(
-                  "This browser could not save your interest. Enable local storage and try again.",
-                );
-              }
-            }}
-          >
-            <label htmlFor="name">Your name</label>
-            <input
-              id="name"
-              name="name"
-              autoComplete="name"
-              required
-              maxLength={100}
-              placeholder="Ada Lovelace"
-            />
-            <label htmlFor="email">Email address</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              autoComplete="email"
-              required
-              placeholder="you@example.com"
-            />
-            <label htmlFor="track">What are you excited about?</label>
-            <select id="track" name="track">
-              <option>Everything. Count me in.</option>
-              <option>Git workshop</option>
-              <option>GitHub & open source</option>
-              <option>DSA arena</option>
-            </select>
-            {error && <p role="alert">{error}</p>}
-            <button className="button button-primary form-submit" type="submit">
-              Save my interest <ArrowRight size={17} />
-            </button>
-          </form>
-          <p className="small muted">
-            You can remove these details by clearing this site’s browser data.
-          </p>
-        </>
-      )}
-    </Dialog>
-  );
-}
 
 function HeroTerminal() {
   const [line, setLine] = useState(0);
@@ -156,7 +61,6 @@ function HeroTerminal() {
 
 export default function App() {
   const [menu, setMenu] = useState(false);
-  const [interest, setInterest] = useState(false);
   const [track, setTrack] = useState<(typeof event.tracks)[number] | null>(
     null,
   );
@@ -164,7 +68,6 @@ export default function App() {
   const nav = [
     { href: "#experience", title: "Experience" },
     { href: "#schedule", title: "Schedule" },
-    { href: "#arena", title: "The arena" },
     { href: "#faq", title: "FAQs" },
   ];
   return (
@@ -191,12 +94,6 @@ export default function App() {
             ))}
           </nav>
           <div className="header-right">
-            <button
-              className="button header-cta"
-              onClick={() => setInterest(true)}
-            >
-              Join the sphere <ArrowUpRight size={15} />
-            </button>
             <button
               className="icon-button mobile-menu-button"
               aria-label={menu ? "Close navigation" : "Open navigation"}
@@ -279,13 +176,7 @@ export default function App() {
                     <br className="desktop-break" /> art of solving what’s next.
                   </p>
                   <div className="hero-actions">
-                    <button
-                      className="button button-primary"
-                      onClick={() => setInterest(true)}
-                    >
-                      Join the sphere <ArrowUpRight size={18} />
-                    </button>
-                    <a className="button button-ghost" href="#experience">
+                    <a className="button button-primary" href="#experience">
                       Explore the experience <ArrowDown size={16} />
                     </a>
                   </div>
@@ -318,7 +209,7 @@ export default function App() {
                 <span className="divider">/</span>
                 <span>REAL CONNECTIONS</span>
               </div>
-              <span className="mono muted small">01 — 06</span>
+              <span className="mono muted small">01 — 05</span>
             </div>
           </section>
           <div
@@ -438,12 +329,11 @@ export default function App() {
             </Reveal>
           </section>
           <GitWorkflow />
-          <Arena />
           <section className="section schedule-section" id="schedule">
             <Reveal>
               <div className="section-top">
                 <div>
-                  <p className="eyebrow">04 / THE GAME PLAN</p>
+                  <p className="eyebrow">03 / THE GAME PLAN</p>
                   <h2>
                     A day worth
                     <br />
@@ -534,7 +424,7 @@ export default function App() {
             <Reveal>
               <div className="faq-layout">
                 <div>
-                  <p className="eyebrow">05 / A FEW THINGS TO KNOW</p>
+                  <p className="eyebrow">04 / A FEW THINGS TO KNOW</p>
                   <h2>
                     Questions?
                     <br />
@@ -574,7 +464,7 @@ export default function App() {
               <div className="cta-panel">
                 <div className="cta-grid" />
                 <p className="eyebrow">
-                  <span className="status-dot" /> 06 / YOUR NEXT CHAPTER
+                  <span className="status-dot" /> 05 / YOUR NEXT CHAPTER
                 </p>
                 <h2>
                   Great things start
@@ -582,12 +472,9 @@ export default function App() {
                   with a <span className="serif lavender">first commit.</span>
                 </h2>
                 <p>You bring the curiosity. We’ll bring the possibilities.</p>
-                <button
-                  className="button button-primary"
-                  onClick={() => setInterest(true)}
-                >
-                  Let’s build something <ArrowUpRight size={18} />
-                </button>
+                <a className="button button-primary" href="#schedule">
+                  Explore the event schedule <ArrowUpRight size={18} />
+                </a>
                 <span className="mono cta-footnote">
                   GIT. GITHUB. DSA. YOU.
                 </span>
@@ -618,7 +505,7 @@ export default function App() {
             <span>© {event.year} CodeSphere. Built for what’s next.</span>
             <div>
               <a href="#experience">Experience</a>
-              <a href="#arena">Arena</a>
+              <a href="#schedule">Schedule</a>
               <a href="#faq">FAQs</a>
             </div>
             <span className="mono">
@@ -627,7 +514,6 @@ export default function App() {
           </div>
         </footer>
       </div>
-      {interest && <InterestForm onClose={() => setInterest(false)} />}{" "}
       {track && (
         <Dialog title={track.title} onClose={() => setTrack(null)}>
           <p className="eyebrow lavender">{track.category}</p>
@@ -638,12 +524,12 @@ export default function App() {
             ))}
           </div>
           <a
-            className="button button-primary form-submit"
-            href={track.id === "dsa" ? "#arena" : "#workflow"}
+            className="button button-primary track-detail-link"
+            href={track.id === "dsa" ? "#schedule" : "#workflow"}
             onClick={() => setTrack(null)}
           >
             {track.id === "dsa"
-              ? "Try a warm-up challenge"
+              ? "View the DSA session"
               : "Try the Git playground"}
             <ArrowRight size={17} />
           </a>

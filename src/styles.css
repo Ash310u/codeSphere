@@ -168,17 +168,6 @@ a:focus-visible {
 .button:hover {
   transform: translateY(-2px);
 }
-.header-cta {
-  background: #17151f;
-  border: 1px solid #383040;
-  color: #ddd4f6;
-  padding: 11px 17px;
-  font-size: 11px;
-  gap: 19px;
-}
-.header-cta:hover {
-  background: #292236;
-}
 .button-primary {
   color: #171125;
   background: #bda8ff;
@@ -933,173 +922,6 @@ a:focus-visible {
   font-size: 11px;
   color: #89c7a6;
 }
-.arena-section {
-  border-top: 1px solid #1d1d25;
-  background: radial-gradient(ellipse at 20% 60%, #12302b1b, transparent 60%);
-}
-.arena-layout {
-  display: grid;
-  grid-template-columns: 1fr 280px;
-  gap: 20px;
-}
-.problem-panel {
-  border: 1px solid #2d2d36;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #101116;
-}
-.arena-tabs {
-  display: flex;
-  gap: 7px;
-  align-items: center;
-  padding: 15px 18px;
-  border-bottom: 1px solid #27282f;
-}
-.arena-tabs button {
-  background: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  padding: 7px 10px;
-  font-size: 9px;
-  color: #9a949f;
-}
-.arena-tabs button.active {
-  background: #24212d;
-  border-color: #3c3547;
-  color: #e0d8ec;
-}
-.arena-tabs > span {
-  margin-left: auto;
-  font-size: 7px;
-  letter-spacing: 0.5px;
-}
-.problem-row {
-  width: 100%;
-  padding: 21px 20px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  border: 0;
-  border-bottom: 1px solid #25252d;
-  background: none;
-  text-align: left;
-  transition: background 0.2s;
-}
-.problem-row:hover {
-  background: #1b1922;
-}
-.problem-number {
-  font-size: 9px;
-  color: #6b6677;
-}
-.problem-icon {
-  background: #1e1c27;
-  border: 1px solid #33303c;
-  color: #aa95c8;
-  border-radius: 5px;
-  width: 34px;
-  height: 34px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.problem-name {
-  font-size: 12px;
-  font-weight: 550;
-  flex: 1;
-}
-.problem-name small {
-  display: block;
-  font-size: 8px;
-  color: #807b8a;
-  margin-top: 6px;
-  font-weight: 400;
-}
-.difficulty {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 8px;
-  padding: 5px 8px;
-  border-radius: 3px;
-  white-space: nowrap;
-}
-.difficulty.easy {
-  background: #13271f;
-  color: #89c3a4;
-  border: 1px solid #294336;
-}
-.difficulty.medium {
-  background: #2a2415;
-  color: #c5af70;
-  border: 1px solid #463b22;
-}
-.problem-row > svg {
-  color: #766e85;
-  margin-left: 10px;
-}
-.arena-foot {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  padding: 14px 20px;
-  font-size: 8px;
-  color: #7f788b;
-}
-.arena-foot > span:last-child {
-  margin-left: auto;
-}
-.score-panel {
-  background: linear-gradient(145deg, #16231f44, #101116);
-  border: 1px solid #29352f;
-  border-radius: 8px;
-  padding: 26px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.score-panel > svg {
-  color: #96c3ab;
-  margin-bottom: 19px;
-}
-.score-panel .eyebrow {
-  font-size: 8px;
-  color: #829c8f;
-  letter-spacing: 1px;
-  margin-bottom: 13px;
-}
-.score-number {
-  font-size: 56px;
-  letter-spacing: -2px;
-  font-weight: 500;
-  line-height: 1;
-}
-.score-number > span {
-  font-size: 14px;
-  letter-spacing: 0;
-  color: #82988c;
-  margin-left: 8px;
-}
-.score-meter {
-  width: 100%;
-  height: 3px;
-  background: #2b3a32;
-  margin: 23px 0 0;
-}
-.score-meter span {
-  display: block;
-  height: 100%;
-  background: #8dcdb0;
-  transition: width 0.5s;
-}
-.score-panel p:not(.eyebrow) {
-  font-size: 10px;
-  color: #8b9c93;
-  line-height: 1.9;
-  margin-bottom: 22px;
-}
-.score-panel > .small {
-  font-size: 7px;
-  margin-top: auto;
-}
 .schedule-section {
   border-top: 1px solid #202028;
 }
@@ -1447,69 +1269,9 @@ a:focus-visible {
   line-height: 1.8;
   color: #b2a6bf;
 }
-.dialog label {
-  display: block;
-  font-size: 11px;
-  color: #bfb1ce;
-  margin-bottom: 7px;
-  margin-top: 17px;
-}
-.dialog input,
-.dialog select {
-  width: 100%;
-  padding: 12px 13px;
-  background: #1b1523;
-  border: 1px solid #3b2e4b;
-  border-radius: 5px;
-  color: #f0e7fc;
-  font-size: 12px;
-  outline: none;
-}
-.dialog input:focus,
-.dialog select:focus {
-  border-color: #b5a0e7;
-  box-shadow: 0 0 0 2px #b5a0e722;
-}
-.dialog input::placeholder {
-  color: #6f617f;
-}
-.dialog .small {
-  font-size: 9px;
-}
-.form-submit {
+.track-detail-link {
   width: 100%;
   margin-top: 25px;
-}
-.notice {
-  border: 1px solid #45344e;
-  background: #211927;
-  color: #b9a6c9;
-  font-size: 11px;
-  line-height: 1.8;
-  border-radius: 5px;
-  padding: 13px 15px;
-  margin: 16px 0;
-}
-.notice-success {
-  background: #15251c;
-  border-color: #35563e;
-  color: #a7cfb3;
-}
-.saved-icon {
-  color: #a9dfb9;
-  margin: 25px 0;
-}
-.problem-badges {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  margin-bottom: 18px;
-}
-.form-actions {
-  display: flex;
-  gap: 20px;
-  margin-top: 18px;
-  align-items: center;
 }
 .skip-link {
   position: fixed;
@@ -1628,9 +1390,6 @@ a:focus-visible {
   }
   .card-command {
     font-size: 7px;
-  }
-  .arena-layout {
-    grid-template-columns: 1fr 240px;
   }
   .schedule-layout {
     gap: 40px;
@@ -1834,40 +1593,6 @@ a:focus-visible {
   .stage-file {
     font-size: 6px;
   }
-  .arena-layout {
-    grid-template-columns: 1fr;
-  }
-  .score-panel {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 25px;
-  }
-  .score-panel > svg {
-    grid-column: 1;
-    grid-row: 1;
-    margin: 0;
-  }
-  .score-panel .eyebrow {
-    grid-column: 1;
-    grid-row: 2;
-    margin: 12px 0 0;
-  }
-  .score-number {
-    grid-column: 2;
-    grid-row: 1 / 3;
-    text-align: right;
-    font-size: 44px;
-  }
-  .score-meter {
-    grid-column: 1 / 3;
-  }
-  .score-panel p:not(.eyebrow) {
-    grid-column: 1 / 3;
-    margin-bottom: 10px;
-  }
-  .score-panel > .small {
-    grid-column: 1 / 3;
-  }
   .schedule-layout {
     grid-template-columns: 1fr;
   }
@@ -1924,11 +1649,6 @@ a:focus-visible {
   }
 }
 @media (max-width: 580px) {
-  .header-cta {
-    font-size: 9px;
-    padding: 10px 12px;
-    gap: 9px;
-  }
   .header-right {
     gap: 8px;
   }
@@ -2223,47 +1943,6 @@ a:focus-visible {
     font-size: 9px;
     gap: 6px;
   }
-  .arena-tabs {
-    padding: 12px;
-    gap: 2px;
-  }
-  .arena-tabs button {
-    font-size: 8px;
-    padding: 7px 8px;
-  }
-  .arena-tabs > span {
-    font-size: 6px;
-  }
-  .problem-row {
-    padding: 18px 13px;
-    gap: 9px;
-  }
-  .problem-number {
-    font-size: 8px;
-  }
-  .problem-icon {
-    width: 30px;
-    height: 30px;
-  }
-  .problem-name {
-    font-size: 11px;
-  }
-  .difficulty {
-    font-size: 7px;
-    padding: 5px 6px;
-  }
-  .problem-row > svg {
-    width: 14px;
-    margin-left: 1px;
-  }
-  .arena-foot {
-    padding: 12px;
-    font-size: 7px;
-    gap: 6px;
-  }
-  .score-panel {
-    padding: 23px;
-  }
   .schedule-note {
     margin-top: 24px;
   }
@@ -2368,13 +2047,6 @@ a:focus-visible {
   }
   .dialog .eyebrow {
     font-size: 7px;
-  }
-  .form-actions {
-    gap: 15px;
-  }
-  .form-actions .button {
-    font-size: 11px;
-    padding: 12px 15px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
