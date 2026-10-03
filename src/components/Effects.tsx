@@ -86,7 +86,7 @@ export function Sphere() {
       <svg className="sphere-mesh" viewBox="0 0 600 600" aria-hidden="true">
         <defs>
           <radialGradient id="sphereGlow">
-            <stop stopColor="var(--accent)" stopOpacity=".09" />
+            <stop stopColor="var(--accent)" stopOpacity=".025" />
             <stop offset="1" stopColor="var(--accent)" stopOpacity="0" />
           </radialGradient>
           <linearGradient id="meshColor" x1="0" y1="0" x2="1" y2="1">
@@ -126,7 +126,7 @@ export function Sphere() {
           fill="none"
           opacity=".55"
         />
-        <circle className="orbit-dot" cx="530" cy="182" r="5" fill="var(--accent)" />
+        <circle className="orbit-dot" cx="530" cy="182" r="5" fill="var(--cyan)" />
       </svg>
       <button
         className="sphere-tag tag-main"
