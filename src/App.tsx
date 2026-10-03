@@ -16,7 +16,7 @@ import {
   X,
 } from "lucide-react";
 import { event } from "./data/event";
-import { Count, Reveal, Sphere } from "./components/Effects";
+import { Reveal, Sphere } from "./components/Effects";
 import Dialog from "./components/Dialog";
 import GitWorkflow from "./components/GitWorkflow";
 
@@ -40,15 +40,15 @@ function HeroTerminal() {
       </div>
       <div className="terminal-body">
         <p>
-          <span className="terminal-dollar">❯</span> git clone your-potential
+          <span className="terminal-dollar">❯</span> git init codesphere
         </p>
         <p className={line >= 1 ? "" : "terminal-hidden"}>
-          <span className="muted">Cloning into</span>{" "}
-          <span className="lavender">'your-next-chapter'</span>…
+          <span className="muted">Initialized repository in</span>{" "}
+          <span className="lavender">'codesphere/.git/'</span>
         </p>
         <p className={line >= 2 ? "" : "terminal-hidden"}>
           <Check size={12} />
-          <span>Ready to build something great.</span>
+          <span>Ready for your first commit.</span>
         </p>
         <p className={line >= 3 ? "" : "terminal-hidden"}>
           <span className="terminal-dollar">❯</span>{" "}
@@ -144,18 +144,17 @@ export default function App() {
             <div className="hero-spotlight" />
             <div className="hero-topline">
               <span className="edition mono">
-                THE DEVELOPER EXPERIENCE / {event.year}
+                A DEVELOPER MEETUP / {event.year}
               </span>
               <span className="mono small hero-status">
-                <span className="status-dot" /> YOUR NEXT COMMIT STARTS HERE
+                <span className="status-dot" /> DATE & VENUE TO BE ANNOUNCED
               </span>
             </div>
             <div className="hero-layout">
               <div className="hero-copy">
                 <Reveal>
                   <div className="announcement">
-                    <span className="status-dot" /> Learn. Collaborate. Level
-                    up.
+                    <span className="status-dot" /> GIT / GITHUB / DSA
                     <span className="announcement-line" />
                     <span className="mono">v.2026</span>
                   </div>
@@ -170,14 +169,13 @@ export default function App() {
                     Build. Commit. <span className="lavender">Solve.</span>
                   </div>
                   <p className="hero-description">
-                    Where curious minds become better developers.
-                    <br className="desktop-break" /> A hands-on experience in
-                    Git, GitHub, and the
-                    <br className="desktop-break" /> art of solving what’s next.
+                    Get your hands on Git. Build with other developers.
+                    Put your problem-solving skills to work.
+                    A day for learning by doing.
                   </p>
                   <div className="hero-actions">
                     <a className="button button-primary" href="#experience">
-                      Explore the experience <ArrowDown size={16} />
+                      Explore the program <ArrowDown size={16} />
                     </a>
                   </div>
                   <div className="hero-meta">
@@ -185,7 +183,7 @@ export default function App() {
                       <span className="tiny-square" /> ALL SKILL LEVELS WELCOME
                     </span>
                     <span>
-                      <Code2 size={13} /> JUST BRING YOUR CURIOSITY
+                      <Code2 size={13} /> BRING YOUR LAPTOP
                     </span>
                   </div>
                 </Reveal>
@@ -234,17 +232,14 @@ export default function App() {
                 <div>
                   <p className="eyebrow">01 / THE EXPERIENCE</p>
                   <h2>
-                    One sphere.
+                    Learn the tools.
                     <br />
-                    <span className="muted">Endless possibilities.</span>
+                    <span className="muted">Then put them to work.</span>
                   </h2>
                 </div>
                 <p className="section-description">
-                  Less watching. More doing.
-                  <br />
-                  Three experiences built to take you from
-                  <br />
-                  “I think I can” to “I just did.”
+                  Three hands-on tracks, from your first commit
+                  to working together and solving problems.
                 </p>
               </div>
             </Reveal>
@@ -314,19 +309,6 @@ export default function App() {
                 </Reveal>
               ))}
             </div>
-            <Reveal>
-              <div className="stats-row">
-                {event.stats.map((s) => (
-                  <div className="stat" key={s.label}>
-                    <strong>
-                      <Count value={s.value} suffix={s.suffix} />
-                      <span className="stat-dot">.</span>
-                    </strong>
-                    <span className="mono">{s.label}</span>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
           </section>
           <GitWorkflow />
           <section className="section schedule-section" id="schedule">
@@ -426,9 +408,9 @@ export default function App() {
                 <div>
                   <p className="eyebrow">04 / A FEW THINGS TO KNOW</p>
                   <h2>
-                    Questions?
+                    Before you arrive.
                     <br />
-                    <span className="muted">We’ve got you.</span>
+                    <span className="muted">A few useful answers.</span>
                   </h2>
                   <p className="section-description">
                     A little clarity before your first commit.
@@ -467,11 +449,11 @@ export default function App() {
                   <span className="status-dot" /> 05 / YOUR NEXT CHAPTER
                 </p>
                 <h2>
-                  Great things start
+                  Your next commit
                   <br />
-                  with a <span className="serif lavender">first commit.</span>
+                  <span className="serif lavender">starts here.</span>
                 </h2>
-                <p>You bring the curiosity. We’ll bring the possibilities.</p>
+                <p>Git, GitHub, and a day of figuring things out together.</p>
                 <a className="button button-primary" href="#schedule">
                   Explore the event schedule <ArrowUpRight size={18} />
                 </a>
